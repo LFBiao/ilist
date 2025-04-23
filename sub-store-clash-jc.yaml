@@ -1,7 +1,7 @@
 # url 里填写自己的订阅,名称不能重复
 proxy-providers:
   ProviderAirPort:
-    url: "http://192.168.18.101:3001/CKg2abstVnOeRpm1aB4G/download/collection/%E6%9C%BA%E5%9C%BA%E8%81%9A%E5%90%88?target=Clash"
+    url: "http://192.168.18.100:3008/T3B9dgzBzdRbBF8Aqx7P/download/collection/%E6%9C%BA%E5%9C%BA"
     type: http
     interval: 86400
     health-check:
