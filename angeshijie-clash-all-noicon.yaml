@@ -6,7 +6,7 @@
 
 proxy-providers:
   NB:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/NB?target=Clash"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/NB?target=ClashMeta"
     type: http
     interval: 86400
     health-check:
@@ -16,7 +16,7 @@ proxy-providers:
     proxy: 直连
 
   YiYuan:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/%E4%B8%80%E5%85%83?target=Clash"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/yiyuan?target=ClashMeta"
     type: http
     interval: 86400
     health-check:
@@ -26,7 +26,7 @@ proxy-providers:
     proxy: 直连
 
   CF:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/CF?target=Clash"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/CF?target=ClashMeta"
     type: http
     interval: 86400
     health-check:
@@ -36,7 +36,7 @@ proxy-providers:
     proxy: 直连
 
   DaWang40:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/%E5%A4%A7%E7%8E%8B40?target=Clash"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/dawang40?target=ClashMeta"
     type: http
     interval: 86400
     health-check:
@@ -46,7 +46,7 @@ proxy-providers:
     proxy: 直连
 
   DaWang50:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/%E5%A4%A7%E7%8E%8B50?target=Clash"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/dawang50?target=ClashMeta"
     type: http
     interval: 86400
     health-check:
@@ -56,7 +56,7 @@ proxy-providers:
     proxy: 直连
 
   Free:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/collection/%E5%85%8D%E8%B4%B9%E8%81%9A%E5%90%88?target=Clash"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/collection/%E5%85%8D%E8%B4%B9%E8%81%9A%E5%90%88?target=ClashMeta"
     type: http
     interval: 86400
     health-check:
@@ -66,7 +66,7 @@ proxy-providers:
     proxy: 直连
 
   MaoEr:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/MaoEr?target=Clash"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/MaoEr?target=ClashMeta"
     type: http
     interval: 86400
     health-check:
