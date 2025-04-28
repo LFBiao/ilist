@@ -141,19 +141,20 @@ profile:
 pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自动, ♻️ 香港自动, ♻️ 香港不动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 备选自动, ♻️ 免费自动, 直连]}
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 香港不动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 备选自动, ♻️ 免费自动, 🌐 全部节点, 直连]}
-  - {name: ChatGPT, <<: *pr}
-  - {name: Claude, <<: *pr}
-  - {name: Meta AI, <<: *pr}
-  - {name: Perplexity, <<: *pr}
+  - {name: YouTube, <<: *pr}
+  - {name: Google, <<: *pr}
+  - {name: TikTok, <<: *pr}
   - {name: GitHub, <<: *pr}
+  - {name: ChatGPT, <<: *pr}
+  - {name: Meta AI, <<: *pr}
+  - {name: Claude, <<: *pr}
+  - {name: Perplexity, <<: *pr}
   - {name: Telegram, <<: *pr}
   - {name: Twitter(X), <<: *pr}
   - {name: WhatsApp, <<: *pr}
   - {name: Facebook, <<: *pr}
   - {name: Steam, <<: *pr}
   - {name: Game, <<: *pr}
-  - {name: YouTube, <<: *pr}
-  - {name: TikTok, <<: *pr}
   - {name: Disney, <<: *pr}
   - {name: Netflix, <<: *pr}
   - {name: HBO, <<: *pr}
@@ -162,7 +163,6 @@ proxy-groups:
   - {name: Amazon, <<: *pr}
   - {name: Apple, <<: *pr}
   - {name: Microsoft, <<: *pr}
-  - {name: Google, <<: *pr}
   - {name: Test, <<: *pr}
   - {name: 国外, <<: *pr}
   - {name: 国内, <<: *pr}
