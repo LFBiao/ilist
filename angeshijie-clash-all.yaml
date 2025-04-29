@@ -6,7 +6,7 @@
 
 proxy-providers:
   NB:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/NB?target=ClashMeta"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/NB?target=Clash"
     type: http
     interval: 86400
     health-check:
@@ -16,7 +16,7 @@ proxy-providers:
     proxy: 直连
 
   YiYuan:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/yiyuan?target=ClashMeta"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/yiyuan?target=Clash"
     type: http
     interval: 86400
     health-check:
@@ -26,7 +26,7 @@ proxy-providers:
     proxy: 直连
 
   CF:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/CF?target=ClashMeta"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/CF?target=Clash"
     type: http
     interval: 86400
     health-check:
@@ -36,7 +36,7 @@ proxy-providers:
     proxy: 直连
 
   DaWang40:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/dawang40?target=ClashMeta"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/dawang40?target=Clash"
     type: http
     interval: 86400
     health-check:
@@ -46,7 +46,7 @@ proxy-providers:
     proxy: 直连
 
   DaWang50:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/dawang50?target=ClashMeta"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/dawang50?target=Clash"
     type: http
     interval: 86400
     health-check:
@@ -56,7 +56,7 @@ proxy-providers:
     proxy: 直连
 
   Free:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/collection/%E5%85%8D%E8%B4%B9%E8%81%9A%E5%90%88?target=ClashMeta"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/collection/%E5%85%8D%E8%B4%B9%E8%81%9A%E5%90%88?target=Clash"
     type: http
     interval: 86400
     health-check:
@@ -66,7 +66,7 @@ proxy-providers:
     proxy: 直连
 
   MaoEr:
-    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/MaoEr?target=ClashMeta"
+    url: "http://192.168.18.100:3001/CKg2abstVnOeRpm1aB4G/download/MaoEr?target=Clash"
     type: http
     interval: 86400
     health-check:
@@ -184,8 +184,7 @@ proxy-groups:
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - DOMAIN-KEYWORD,adobe,REJECT
-  - DOMAIN-SUFFIX,github.com,🚀 默认代理
-  - DOMAIN-SUFFIX,githubusercontent.com,🚀 默认代理
+  - RULE-SET,AdBlock / Domain,REJECT
   - RULE-SET,ChatGPT / Domain,ChatGPT
   - RULE-SET,Claude / Domain,Claude
   - RULE-SET,Meta AI / Domain,Meta AI
@@ -278,6 +277,5 @@ rule-providers:
   China / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   China / IP: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
   Private / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
+  AdBlock / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/privacy-protection-tools/anti-ad.github.io/master/docs/mihomo.mrs"}
 #  GateFireWall / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
-
-
