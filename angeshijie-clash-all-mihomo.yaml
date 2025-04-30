@@ -184,6 +184,7 @@ proxy-groups:
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - DOMAIN-KEYWORD,adobe,REJECT
+  - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
   - RULE-SET,ChatGPT / Domain,ChatGPT
   - RULE-SET,Claude / Domain,Claude
   - RULE-SET,Meta AI / Domain,Meta AI
