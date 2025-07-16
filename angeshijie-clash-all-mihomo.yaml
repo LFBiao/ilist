@@ -186,6 +186,7 @@ rules:
   - DOMAIN-SUFFIX,pttweb.cc,🚀 默认代理
   - DOMAIN-KEYWORD,adobe,REJECT
   - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
+  - RULE-SET,pingbi / Domain,REJECT
   - RULE-SET,ChatGPT / Domain,ChatGPT
   - RULE-SET,Claude / Domain,Claude
   - RULE-SET,Meta AI / Domain,Meta AI
@@ -278,4 +279,5 @@ rule-providers:
   China / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   China / IP: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
   Private / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
+  pingbi / Domain: {<<: *class, url: "https://raw.githubusercontent.com/LFBiao/ilist/refs/heads/main/direct.list"}
 #  GateFireWall / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
