@@ -183,7 +183,7 @@ proxy-groups:
 # ========================
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
-  - DOMAIN-SUFFIX,pttweb.cc,🚀 默认代理
+  - DOMAIN-SUFFIX,pttweb.cc,♻️ 台湾自动
   - DOMAIN-KEYWORD,adobe,REJECT
   - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
   - RULE-SET,pingbi / Domain,REJECT
