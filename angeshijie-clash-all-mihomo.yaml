@@ -176,6 +176,7 @@ rules:
   - DOMAIN-SUFFIX,pttweb.cc,♻️ 台湾自动
   - DOMAIN-KEYWORD,adobe,REJECT
   - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
+  - DOMAIN-SUFFIX,idsduf.com,🚀 默认代理
   - RULE-SET,pingbi / Domain,REJECT
   - RULE-SET,anti-AD / Domain,REJECT
   - RULE-SET,ChatGPT / Domain,ChatGPT
