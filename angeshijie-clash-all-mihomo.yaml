@@ -178,7 +178,7 @@ rules:
   - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
   - DOMAIN-SUFFIX,idsduf.com,🚀 默认代理
   - RULE-SET,pingbi / Domain,REJECT
-#  - RULE-SET,anti-AD / Domain,REJECT
+  - RULE-SET,anti-AD / Domain,REJECT
   - RULE-SET,ChatGPT / Domain,ChatGPT
   - RULE-SET,Claude / Domain,Claude
   - RULE-SET,Meta AI / Domain,Meta AI
@@ -272,5 +272,5 @@ rule-providers:
   China / IP: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
   Private / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   pingbi / Domain: {<<: *class, url: "https://raw.githubusercontent.com/LFBiao/ilist/refs/heads/main/direct.list"}
-#  anti-AD / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/privacy-protection-tools/anti-ad.github.io/master/docs/mihomo.mrs"}
+  anti-AD / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/privacy-protection-tools/anti-ad.github.io/master/docs/mihomo.mrs"}
 #  GateFireWall / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
