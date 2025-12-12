@@ -158,7 +158,7 @@ proxy-groups:
   - {name: 国内, <<: *pr}
   - {name: 其他, <<: *pr}
   - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^(?!.*(台|日|韩|新|深|美)).*$"}
-  - {name: ♻️ 香港不动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(港|HK|(?i)Hong)|直连).*$"}
+  - {name: ♻️ 香港不动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(CF|港|HK|(?i)Hong)|直连).*$"}
   - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
   - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
   - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(美|US|CF|(?i)States|America))^(?!.*(港|台|日|韩|新)).*$"}
