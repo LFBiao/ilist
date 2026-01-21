@@ -174,6 +174,7 @@ proxy-groups:
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - DOMAIN-SUFFIX,pttweb.cc,♻️ 台湾自动
+  - DOMAIN-SUFFIX,gemini.google.com,♻️ 台湾自动
   - DOMAIN-KEYWORD,adobe,REJECT
   - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
   - DOMAIN-SUFFIX,idsduf.com,🚀 默认代理
