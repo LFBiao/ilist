@@ -71,7 +71,7 @@ proxies:
     tls: true
     udp: true
     servername: clash.lifengbio.dpdns.org
-    skip-cert-verify: false
+    skip-cert-verify: true
     ws-opts:
       path: /sada
       headers:
