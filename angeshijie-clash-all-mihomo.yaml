@@ -4,6 +4,22 @@
 
 # 机场节点订阅
 
+proxies:
+    name: "自建-美国-US-0lky6lnbx"   # 名字随意起，建议带标识方便选
+    type: vless
+    server: 23.95.189.179             # IP
+    port: 443
+    uuid: 43a0a633-5bd5-4c35-b841-199c65dea91b   # 从 vless 链接里提取的 uuid
+    network: ws
+    tls: true
+    udp: true                         # 建议开启
+    servername: clash.lifengbio.dpdns.org   # sni / host，必须填这个（伪装域名）
+    skip-cert-verify: false           # 生产环境别开 true，除非自签证书有问题
+    ws-opts:
+      path: /sada                     # 路径
+      headers:
+        Host: clash.lifengbio.dpdns.org
+
 proxy-providers:
   NB:
     url: "http://192.168.18.100:3008/T3B9dgzBzdRbBF8Aqx7P/download/NB?target=ClashMeta"
@@ -15,16 +31,6 @@ proxy-providers:
       interval: 300
     proxy: 直连
   
-  自建-美国-US:
-    url: "https://23.95.189.179:2096/sub/fs54hoore8edh9aq"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
-
   YiYuan:
     url: "http://192.168.18.100:3008/T3B9dgzBzdRbBF8Aqx7P/download/yiyuan?target=ClashMeta"
     type: http
