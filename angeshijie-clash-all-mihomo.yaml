@@ -109,8 +109,6 @@ dns:
     - +.lan
     - +.local
     - geosite:cn
-    - clash.lifengbio.dpdns.org   # ← 加这一行
-    - '+.dpdns.org'               # 保险起见加域名后缀
     
 ipv6: true
 # ========================
