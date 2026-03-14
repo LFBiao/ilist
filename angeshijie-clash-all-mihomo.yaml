@@ -45,8 +45,8 @@ proxy-providers:
       interval: 300
     proxy: 直连
 
-  DaWang50:
-    url: "http://192.168.18.100:3008/T3B9dgzBzdRbBF8Aqx7P/download/dawang50?target=ClashMeta"
+  DaWang:
+    url: "http://192.168.18.100:3008/T3B9dgzBzdRbBF8Aqx7P/download/dawang?target=ClashMeta"
     type: http
     interval: 86400
     health-check:
