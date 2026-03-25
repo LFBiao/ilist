@@ -105,17 +105,50 @@ secret: "123456"
 dns:
   enable: true
   listen: 0.0.0.0:7874
-  ipv6: true
+  ipv6: false
   enhanced-mode: fake-ip
-  fake-ip-range: 198.20.0.1/16
+  fake-ip-range: 198.18.0.1/16
   nameserver:
-    - 202.99.104.68
-    - 202.99.96.68
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   fake-ip-filter:
+    - "*"
     - +.lan
     - +.local
-    - geosite:cn
-
+    - time.*.com
+    - ntp.*.com
+    - +.market.xiaomi.com
+  use-hosts: false
+  use-system-hosts: false
+  respect-rules: true
+  default-nameserver:
+    - 202.99.96.68
+    - 202.99.104.68
+    - 223.5.5.5
+    - tls://223.5.5.5
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  direct-nameserver:
+    - 202.99.96.68
+    - 202.99.104.68
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback: []
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+    domain:
+      - +.google.com
+      - +.facebook.com
+      - +.youtube.com
+  nameserver-policy:
+    https://dns.google/dns-query: ""
 ipv6: true
 
 # ========================
