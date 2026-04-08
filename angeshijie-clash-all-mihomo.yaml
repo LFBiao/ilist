@@ -103,59 +103,52 @@ secret: "123456"
 # DNS 设置
 # ========================
 dns:
-  enable: true
-  listen: 0.0.0.0:7874
-  ipv6: false
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  respect-rules: true
-  use-hosts: true                 # 建议开启，使用系统 hosts
-  use-system-hosts: false
-
-  # 全局默认 nameserver（优先国内快速 DNS）
-  nameserver:
-    - https://dns.alidns.com/dns-query      # 阿里 DoH，国内最快之一
-    - https://doh.pub/dns-query             # 国内公共 DoH
-    - 223.5.5.5                             # 阿里传统 DNS（兜底）
-    - 223.6.6.6
-
-  # 直连模式 DNS（国内网站优先走这里）
-  direct-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-    - 223.5.5.5
-
-  # 代理模式 DNS（国外网站走这里）
-  proxy-server-nameserver:
-    - https://1.1.1.1/dns-query
-    - https://dns.google/dns-query
-
-  # 兜底 DNS（当上面都失败时使用）
-  default-nameserver:
-    - 223.5.5.5
-    - 223.6.6.6
-
-  # Fake-IP 过滤（去掉 "*"，避免所有域名都走 Fake-IP，减少首次开销）
-  fake-ip-filter:
-    - "*.lan"
-    - "*.local"
-    - "+.market.xiaomi.com"
-    - "+.mi.com"
-    - "time.*.com"
-    - "ntp.*.com"
-    - "pool.ntp.org"
-
-  # 域名策略（让国内常用网站强制走国内 DNS，加快首次解析）
-  nameserver-policy:
-    'geosite:cn': https://dns.alidns.com/dns-query
-    '+.baidu.com': https://dns.alidns.com/dns-query
-    '+.douyin.com': https://dns.alidns.com/dns-query
-    '+.ixigua.com': https://dns.alidns.com/dns-query
-    '+.bilibili.com': https://dns.alidns.com/dns-query
-    '+.taobao.com': https://dns.alidns.com/dns-query
-    '+.jd.com': https://dns.alidns.com/dns-query
-    '+.163.com': https://dns.alidns.com/dns-query
-    '+.qq.com': https://dns.alidns.com/dns-query
+  enable: true
+  listen: 0.0.0.0:7874
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fake-ip-filter:
+    - "*"
+    - +.lan
+    - +.local
+    - time.*.com
+    - ntp.*.com
+    - +.market.xiaomi.com
+  use-hosts: false
+  use-system-hosts: false
+  respect-rules: true
+  default-nameserver:
+    - 202.99.96.68
+    - 202.99.104.68
+    - 223.5.5.5
+    - tls://223.5.5.5
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  direct-nameserver:
+    - 202.99.96.68
+    - 202.99.104.68
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback: []
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+    domain:
+      - +.google.com
+      - +.facebook.com
+      - +.youtube.com
+  nameserver-policy:
+    https://dns.google/dns-query: ""
 ipv6: true
 
 # ========================
