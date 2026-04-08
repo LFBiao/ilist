@@ -1,9 +1,8 @@
 # ========================
-# Mihomo 优化配置
+# Mihomo 优化配置 (已修复缩进 + DNS优化)
 # ========================
 
 # 机场节点订阅
-
 proxy-providers:
   ZJ:
     url: "http://192.168.18.100:3008/T3B9dgzBzdRbBF8Aqx7P/download/ZJ?target=ClashMeta"
@@ -55,16 +54,6 @@ proxy-providers:
       interval: 300
     proxy: 直连
 
-#  Free:
-#    url: "http://192.168.18.100:3008/T3B9dgzBzdRbBF8Aqx7P/download/collection/%E5%85%8D%E8%B4%B9%E8%81%9A%E5%90%88?target=ClashMeta"
-#    type: http
-#    interval: 86400
-#    health-check:
-#      enable: true
-#      url: https://www.gstatic.com/generate_204
-#      interval: 300
-#    proxy: 直连
-
   MaoEr:
     url: "http://192.168.18.100:3008/T3B9dgzBzdRbBF8Aqx7P/download/MaoEr?target=ClashMeta"
     type: http
@@ -74,7 +63,6 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 直连
-
 
 proxies:
   - {name: 直连, type: direct}
@@ -100,56 +88,60 @@ external-ui-url: https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pa
 secret: "123456"
 
 # ========================
-# DNS 设置
+# DNS 设置（已优化，加快首次访问速度）
 # ========================
 dns:
-  enable: true
-  listen: 0.0.0.0:7874
-  ipv6: false
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  nameserver:
-    - https://1.1.1.1/dns-query
-    - https://dns.google/dns-query
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-  fake-ip-filter:
-    - "*"
-    - +.lan
-    - +.local
-    - time.*.com
-    - ntp.*.com
-    - +.market.xiaomi.com
-  use-hosts: false
-  use-system-hosts: false
-  respect-rules: true
-  default-nameserver:
-    - 202.99.96.68
-    - 202.99.104.68
-    - 223.5.5.5
-    - tls://223.5.5.5
-  proxy-server-nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-  direct-nameserver:
-    - 202.99.96.68
-    - 202.99.104.68
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-  fallback: []
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
-      - 0.0.0.0/32
-    domain:
-      - +.google.com
-      - +.facebook.com
-      - +.youtube.com
-  nameserver-policy:
-    https://dns.google/dns-query: ""
-ipv6: true
+  enable: true
+  listen: 0.0.0.0:7874
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  respect-rules: true
+  use-hosts: true
+
+  # 全局默认 nameserver（优先国内快速 DNS）
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - 223.5.5.5
+    - 223.6.6.6
+
+  # 直连模式下的 DNS（国内网站优先走这里）
+  direct-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - 223.5.5.5
+    - 223.6.6.6
+
+  # 代理模式下的 DNS（国外网站走这里）
+  proxy-server-nameserver:
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+
+  # 兜底 DNS
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "+.market.xiaomi.com"
+    - "+.mi.com"
+    - "time.*.com"
+    - "ntp.*.com"
+
+  # 域名策略：让国内常用网站强制走国内 DNS，加快首次解析
+  nameserver-policy:
+    'geosite:cn': https://dns.alidns.com/dns-query
+    '+.baidu.com': https://dns.alidns.com/dns-query
+    '+.douyin.com': https://dns.alidns.com/dns-query
+    '+.ixigua.com': https://dns.alidns.com/dns-query
+    '+.bilibili.com': https://dns.alidns.com/dns-query
+    '+.taobao.com': https://dns.alidns.com/dns-query
+    '+.jd.com': https://dns.alidns.com/dns-query
+    '+.163.com': https://dns.alidns.com/dns-query
+    '+.qq.com': https://dns.alidns.com/dns-query
 
 # ========================
 # TUN 模块
@@ -172,6 +164,7 @@ profile:
 # 策略组定义
 # ========================
 pr: &pr {type: select, proxies: [🚀 默认代理, 🚀 AI屏蔽, ♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
+
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
   - {name: 🚀 AI屏蔽, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
@@ -201,16 +194,14 @@ proxy-groups:
   - {name: 国外, <<: *pr}
   - {name: 国内, <<: *pr}
   - {name: 其他, <<: *pr}
+
   - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^(?!.*(台|日|韩|新|深|美)).*$"}
-#  - {name: ♻️ 香港不动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(NB|一元|CF|猫耳|港|HK|(?i)Hong)|直连).*$"}
   - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|ZJ|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
   - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|ZJ|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
   - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(美|US|ZJ|CF|(?i)States|America))^(?!.*(港|台|日|韩|新)).*$"}
   - {name: ♻️ 优质自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(20倍|ZJ|大王|DaWang|猫耳)).*$"}
-#  - {name: ♻️ 备选自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(一元|NB|猫耳)).*$"}
   - {name: ♻️ 自建自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(自建|ZJ)).*$"}
   - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(直连)).*$"}
-#  - {name: 🌐 全部节点, type: select, include-all: true}
 
 # ========================
 # 规则引擎（rules）
@@ -236,7 +227,7 @@ rules:
   - RULE-SET,Facebook / Domain,Facebook
   - RULE-SET,Amazon / Domain,Amazon
   - RULE-SET,Apple / Domain,Apple
-  - RULE-SET,Apple-CN / Domain,Apple  
+  - RULE-SET,Apple-CN / Domain,Apple
   - RULE-SET,Microsoft / Domain,Microsoft
   - RULE-SET,OKX / Domain,Crypto
   - RULE-SET,Bybit / Domain,Crypto
@@ -259,7 +250,7 @@ rules:
   - RULE-SET,Google / IP,Google,no-resolve
   - RULE-SET,TEST / Domain,Test
   - RULE-SET,Proxy / Domain,国外
-  - RULE-SET,Globe / Domain,国外  
+  - RULE-SET,Globe / Domain,国外
   - RULE-SET,Direct / Domain,国内
   - RULE-SET,China / Domain,国内
   - RULE-SET,China / IP,国内,no-resolve
@@ -288,7 +279,7 @@ rule-providers:
   Facebook / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/facebook.mrs"}
   Amazon / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amazon.mrs"}
   Apple-CN / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
-  Apple / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}  
+  Apple / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}
   Microsoft / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
   OKX / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/okx.mrs"}
   Bybit / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bybit.mrs"}
@@ -311,11 +302,10 @@ rule-providers:
   Google / IP: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   TEST / Domain: {<<: *class, url: "https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Check.list"}
   Proxy / Domain: {<<: *class, url: "https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Proxy.list"}
-  Globe / Domain: {<<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"} 
+  Globe / Domain: {<<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"}
   Direct / Domain: {<<: *class, url: "https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Direct.list"}
   China / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   China / IP: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
   Private / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   pingbi / Domain: {<<: *class, url: "https://raw.githubusercontent.com/LFBiao/ilist/refs/heads/main/direct.list"}
   anti-AD / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/privacy-protection-tools/anti-ad.github.io/master/docs/mihomo.mrs"}
-#  GateFireWall / Domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
