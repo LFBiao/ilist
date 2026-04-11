@@ -130,6 +130,9 @@ dns:
     - "+.mi.com"
     - "time.*.com"
     - "ntp.*.com"
+    - "+.argotunnel.com"          # 新增
+    - "+.v2.argotunnel.com"       # 新增
+    - "+.cfargotunnel.com"        # 新增（推荐一起加）
 
   # 域名策略：让国内常用网站强制走国内 DNS，加快首次解析
   nameserver-policy:
