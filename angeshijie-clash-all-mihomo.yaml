@@ -130,10 +130,7 @@ dns:
     - "+.mi.com"
     - "time.*.com"
     - "ntp.*.com"
-    - "+.argotunnel.com"          # 新增
-    - "+.v2.argotunnel.com"       # 新增
-    - "+.cfargotunnel.com"        # 新增（推荐一起加）
-
+    
   # 域名策略：让国内常用网站强制走国内 DNS，加快首次解析
   nameserver-policy:
     'geosite:cn': https://dns.alidns.com/dns-query
@@ -216,9 +213,6 @@ rules:
   - DOMAIN-KEYWORD,adobe,REJECT
   - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
   - DOMAIN-SUFFIX,idsduf.com,🚀 AI屏蔽
-  #- IP-CIDR,198.41.192.0/18,DIRECT,no-resolve
-  #- IP-CIDR,198.41.200.0/18,DIRECT,no-resolve
-  #- IP-CIDR,198.41.208.0/18,DIRECT,no-resolve
   - RULE-SET,pingbi / Domain,REJECT
   - RULE-SET,zhilian / Domain,DIRECT
   - RULE-SET,anti-AD / Domain,REJECT
