@@ -140,6 +140,7 @@ pr: &pr {type: select, proxies: [🚀 默认代理, 🚀 AI屏蔽, ♻️ 全部
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
   - {name: 🚀 AI屏蔽, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
+  - {name: YouTube, <<: *pr}
   - {name: ChatGPT, <<: *pr}
   - {name: Gemini, <<: *pr}
   - {name: Copilot, <<: *pr}
@@ -155,7 +156,6 @@ proxy-groups:
   - {name: WhatsApp, <<: *pr}
   - {name: Facebook, <<: *pr}
   - {name: BiliBili, <<: *pr}
-  - {name: YouTube, <<: *pr}
   - {name: Netflix, <<: *pr}
   - {name: HBO, <<: *pr}
   - {name: Disney, <<: *pr}
