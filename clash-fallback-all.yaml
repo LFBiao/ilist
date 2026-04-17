@@ -180,7 +180,7 @@ proxy-groups:
   - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|ZJ|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
   - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|ZJ|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
   - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(美|US|ZJ|CF|(?i)States|America))^(?!.*(港|台|日|韩|新)).*$"}
-  - {name: ♻️ 优质自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(20倍|ZJ|大王|DaWang|猫耳)).*$"}
+  - {name: ♻️ 优质自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(ZJ|大王|DaWang)).*$"}
   - {name: ♻️ 自建自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(自建|ZJ)).*$"}
   - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(直连)).*$"}
 
