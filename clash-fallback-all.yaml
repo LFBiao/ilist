@@ -188,11 +188,6 @@ proxy-groups:
 # 规则引擎（rules）
 # ========================
 rules:
-  - IP-CIDR,192.168.0.0/16,直连,no-resolve
-  - IP-CIDR,10.0.0.0/8,直连,no-resolve
-  - IP-CIDR,172.16.0.0/12,直连,no-resolve
-  - SRC-IP-CIDR,192.168.0.0/16,直连,no-resolve
-  - IP-CIDR,127.0.0.0/8,直连,no-resolve
   - DOMAIN-SUFFIX,pttweb.cc,♻️ 台湾自动
   - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
   - RULE-SET,pingbi/Domain,拒绝
