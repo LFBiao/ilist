@@ -155,7 +155,7 @@ proxy-groups:
   - {name: Telegram, <<: *pr}
   - {name: WhatsApp, <<: *pr}
   - {name: Facebook, <<: *pr}
-  - {name: BiliBili, <<: *pr}
+#  - {name: BiliBili, <<: *pr}
   - {name: Netflix, <<: *pr}
   - {name: HBO, <<: *pr}
   - {name: Disney, <<: *pr}
@@ -217,7 +217,7 @@ rules:
   - RULE-SET,OKX/Domain,Crypto
   - RULE-SET,Bybit/Domain,Crypto
   - RULE-SET,Binance/Domain,Crypto
-  - RULE-SET,BiliBili/Domain,BiliBili
+#  - RULE-SET,BiliBili/Domain,BiliBili
   - RULE-SET,Youtube/Domain,YouTube
   - RULE-SET,TikTok/Domain,TikTok
   - RULE-SET,Netflix/Domain,Netflix
