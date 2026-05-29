@@ -171,6 +171,7 @@ proxy-groups:
   - {name: Google, <<: *pr}
   - {name: Microsoft, <<: *pr}
   - {name: Test, <<: *pr}
+  - {name: AD, <<: *pr}
   - {name: Block, <<: *pr}
   - {name: 国外, <<: *pr}
   - {name: 国内, <<: *pr}
@@ -191,7 +192,7 @@ rules:
   - DOMAIN-SUFFIX,pttweb.cc,♻️ 台湾自动
   - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
   - RULE-SET,pingbi/Domain,拒绝
-  - RULE-SET,AD/Domain,拒绝
+  - RULE-SET,AD/Domain,AD
   - RULE-SET,zhilian/Domain,国内
   - RULE-SET,daili/Domain,国外
   - RULE-SET,TEST/Domain,Test
