@@ -191,6 +191,7 @@ rules:
   - DOMAIN-SUFFIX,pttweb.cc,♻️ 台湾自动
   - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
   - RULE-SET,pingbi/Domain,拒绝
+  - RULE-SET,AD/Domain,拒绝
   - RULE-SET,zhilian/Domain,国内
   - RULE-SET,daili/Domain,国外
   - RULE-SET,TEST/Domain,Test
@@ -306,11 +307,11 @@ rule-providers:
   Youtube/Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs"}  
   Google/Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"}  
   Google/IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/google.mrs"}
-  BiliBili/Domain: {<<: *domain,  url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bilibili.mrs"}
+#  BiliBili/Domain: {<<: *domain,  url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/bilibili.mrs"}
   pingbi/Domain: {<<: *class, url: "https://raw.githubusercontent.com/LFBiao/ilist/refs/heads/main/pingbi.list"}
   zhilian/Domain: {<<: *class, url: "https://raw.githubusercontent.com/LFBiao/ilist/refs/heads/main/zhilian.list"}
   daili/Domain: {<<: *class, url: "https://raw.githubusercontent.com/LFBiao/ilist/refs/heads/main/proxy.list"}
-
+  AD/Domain: {<<: *domain, url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash.mrs"}  
 #  GateFireWall / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/gfw.mrs"}
 
 
