@@ -140,6 +140,15 @@ pr: &pr {type: select, proxies: [🚀 默认代理, 🚀 AI屏蔽, ♻️ 全部
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
   - {name: 🚀 AI屏蔽, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
+
+  - {name: ♻️ 自建自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(自建|ZJ)).*$"}
+  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^(?!.*(台|日|韩|新|深|美)).*$"}
+  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|ZJ|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
+  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|ZJ|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
+  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(美|US|ZJ|CF|(?i)States|America))^(?!.*(港|台|日|韩|新)).*$"}
+  - {name: ♻️ 优质自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(ZJ|大王|DaWang)).*$"}
+  - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(直连)).*$"}
+
   - {name: YouTube, <<: *pr}
   - {name: ChatGPT, <<: *pr}
   - {name: Gemini, <<: *pr}
@@ -177,13 +186,7 @@ proxy-groups:
   - {name: 国内, <<: *pr}
   - {name: 其他, <<: *pr}
 
-  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^(?!.*(台|日|韩|新|深|美)).*$"}
-  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|ZJ|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
-  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|ZJ|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
-  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(美|US|ZJ|CF|(?i)States|America))^(?!.*(港|台|日|韩|新)).*$"}
-  - {name: ♻️ 优质自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(ZJ|大王|DaWang)).*$"}
-  - {name: ♻️ 自建自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(自建|ZJ)).*$"}
-  - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(直连)).*$"}
+
 
 # ========================
 # 规则引擎（rules）
