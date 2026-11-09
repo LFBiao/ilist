@@ -139,6 +139,15 @@ pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自动, ♻️ 
 
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, 直连, 拒绝]}
+
+  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)(香港|HongKong|Hong\s*Kong|\bHK\b|\bHKG\b|🇭🇰)'}
+  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)(台湾|台灣|臺湾|Taiwan|Taipei|台北|\bTW\b|\bTPE\b|🇹🇼)'}
+  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)(日本|Japan|Tokyo|Osaka|東京|大阪|\bJP\b|\bNRT\b|\bHND\b|🇯🇵)'}
+  - {name: ♻️ 美国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '^(?=.*ZJ)(?=.*US).*$'}
+  - {name: ♻️ 泰国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '^(?=.*ZJ)(?=.*泰国).*$'}
+  - {name: ♻️ 韩国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '^(?=.*ZJ)(?=.*KR).*$'}
+  - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)^(?!.*(直连|Direct|请|订阅|更新|失效|官网|通知|倍率节点)).*$'}
+  
   - {name: YouTube, <<: *pr}
   - {name: ChatGPT, <<: *pr}
   - {name: Gemini, <<: *pr}
@@ -175,14 +184,6 @@ proxy-groups:
   - {name: 国外, <<: *pr}
   - {name: 国内, <<: *pr}
   - {name: 其他, <<: *pr}
-
-  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^(?!.*(台|日|韩|新|深|美)).*$"}
-  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
-  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
-  - {name: ♻️ 美国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(US)).*$"}
-  - {name: ♻️ 泰国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(泰国)).*$"}
-  - {name: ♻️ 韩国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(KR)).*$"}
-  - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(直连)).*$"}
 
 # ========================
 # 规则引擎（rules）
