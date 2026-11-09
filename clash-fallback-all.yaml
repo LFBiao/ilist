@@ -135,60 +135,44 @@ profile:
 # ========================
 # 策略组定义
 # ========================
-pr: &pr {type: select, proxies: [🚀 默认代理, 🚀 AI屏蔽, ♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自建自动, ♻️ 自建韩国, ♻️ 自建美国, 直连, 拒绝]}
+pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, 直连]}
 
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自建自动, ♻️ 自建韩国, ♻️ 自建美国, 直连]}
-  - {name: 🚀 AI屏蔽, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自建自动, ♻️ 自建韩国, ♻️ 自建美国, 直连]}
-
-  - {name: ♻️ 自建自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(自建|ZJ)).*$"}
-  - {name: ♻️ 自建韩国, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(甲骨文)).*$"}
-  - {name: ♻️ 自建美国, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(RN)).*$"}
-  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^(?!.*(台|日|韩|新|深|美)).*$"}
-  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|ZJ|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
-  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|ZJ|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
-  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(美|US|ZJ|CF|(?i)States|America))^(?!.*(港|台|日|韩|新)).*$"}
-#  - {name: ♻️ 优质自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(ZJ|大王|DaWang)).*$"}
-  - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(直连)).*$"}
-
+  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, 直连]}
   - {name: YouTube, <<: *pr}
-  - {name: ChatGPT, <<: *pr}
-  - {name: Gemini, <<: *pr}
-  - {name: Copilot, <<: *pr}
-  - {name: Perplexity, <<: *pr}
-  - {name: Claude, <<: *pr}
-  - {name: Meta AI, <<: *pr}
-  - {name: Grok, <<: *pr}
+  - {name: Google, <<: *pr}
   - {name: TikTok, <<: *pr}
-  - {name: Groq, <<: *pr}
   - {name: GitHub, <<: *pr}
-  - {name: Reddit, <<: *pr}
+  - {name: ChatGPT, <<: *pr}
+  - {name: Meta AI, <<: *pr}
+  - {name: Claude, <<: *pr}
+  - {name: Perplexity, <<: *pr}
   - {name: Telegram, <<: *pr}
+  - {name: Twitter(X), <<: *pr}
   - {name: WhatsApp, <<: *pr}
   - {name: Facebook, <<: *pr}
-#  - {name: BiliBili, <<: *pr}
+  - {name: Steam, <<: *pr}
+  - {name: Game, <<: *pr}
+  - {name: Disney, <<: *pr}
   - {name: Netflix, <<: *pr}
   - {name: HBO, <<: *pr}
-  - {name: Disney, <<: *pr}
-  - {name: Amazon, <<: *pr}
-  - {name: Crunchyroll, <<: *pr}
-  - {name: Popcorn, <<: *pr}
   - {name: Spotify, <<: *pr}
-  - {name: Nvidia, <<: *pr}
-  - {name: Steam, <<: *pr}
-  - {name: Games, <<: *pr}
   - {name: Crypto, <<: *pr}
+  - {name: Amazon, <<: *pr}
   - {name: Apple, <<: *pr}
-  - {name: Google, <<: *pr}
   - {name: Microsoft, <<: *pr}
   - {name: Test, <<: *pr}
-  - {name: AD, <<: *pr}
-  - {name: Block, <<: *pr}
   - {name: 国外, <<: *pr}
   - {name: 国内, <<: *pr}
   - {name: 其他, <<: *pr}
 
-
+  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^(?!.*(台|日|韩|新|深|美)).*$"}
+  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|ZJ|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
+  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|ZJ|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
+  - {name: ♻️ 美国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(US)).*$"}
+  - {name: ♻️ 泰国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(泰国)).*$"}
+  - {name: ♻️ 韩国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(KR)).*$"}
+  - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(直连)).*$"}
 
 # ========================
 # 规则引擎（rules）
