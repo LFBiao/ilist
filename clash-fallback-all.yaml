@@ -177,8 +177,8 @@ proxy-groups:
   - {name: 其他, <<: *pr}
 
   - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^(?!.*(台|日|韩|新|深|美)).*$"}
-  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|ZJ|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
-  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|ZJ|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
+  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
+  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
   - {name: ♻️ 美国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(US)).*$"}
   - {name: ♻️ 泰国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(泰国)).*$"}
   - {name: ♻️ 韩国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(KR)).*$"}
