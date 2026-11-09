@@ -140,28 +140,38 @@ pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自动, ♻️ 
 proxy-groups:
   - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, 直连]}
   - {name: YouTube, <<: *pr}
-  - {name: Google, <<: *pr}
-  - {name: TikTok, <<: *pr}
-  - {name: GitHub, <<: *pr}
   - {name: ChatGPT, <<: *pr}
-  - {name: Meta AI, <<: *pr}
-  - {name: Claude, <<: *pr}
+  - {name: Gemini, <<: *pr}
+  - {name: Copilot, <<: *pr}
   - {name: Perplexity, <<: *pr}
+  - {name: Claude, <<: *pr}
+  - {name: Meta AI, <<: *pr}
+  - {name: Grok, <<: *pr}
+  - {name: TikTok, <<: *pr}
+  - {name: Groq, <<: *pr}
+  - {name: GitHub, <<: *pr}
+  - {name: Reddit, <<: *pr}
   - {name: Telegram, <<: *pr}
-  - {name: Twitter(X), <<: *pr}
   - {name: WhatsApp, <<: *pr}
   - {name: Facebook, <<: *pr}
-  - {name: Steam, <<: *pr}
-  - {name: Game, <<: *pr}
-  - {name: Disney, <<: *pr}
+#  - {name: BiliBili, <<: *pr}
   - {name: Netflix, <<: *pr}
   - {name: HBO, <<: *pr}
-  - {name: Spotify, <<: *pr}
-  - {name: Crypto, <<: *pr}
+  - {name: Disney, <<: *pr}
   - {name: Amazon, <<: *pr}
+  - {name: Crunchyroll, <<: *pr}
+  - {name: Popcorn, <<: *pr}
+  - {name: Spotify, <<: *pr}
+  - {name: Nvidia, <<: *pr}
+  - {name: Steam, <<: *pr}
+  - {name: Games, <<: *pr}
+  - {name: Crypto, <<: *pr}
   - {name: Apple, <<: *pr}
+  - {name: Google, <<: *pr}
   - {name: Microsoft, <<: *pr}
   - {name: Test, <<: *pr}
+  - {name: AD, <<: *pr}
+  - {name: Block, <<: *pr}
   - {name: 国外, <<: *pr}
   - {name: 国内, <<: *pr}
   - {name: 其他, <<: *pr}
