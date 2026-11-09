@@ -163,11 +163,10 @@ profile:
 # ========================
 # 策略组定义
 # ========================
-pr: &pr {type: select, proxies: [🚀 默认代理, 🚀 AI屏蔽, ♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
+pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, 直连]}
 
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
-  - {name: 🚀 AI屏蔽, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 优质自动, ♻️ 自建自动, 直连]}
+  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, 直连]}
   - {name: YouTube, <<: *pr}
   - {name: Google, <<: *pr}
   - {name: TikTok, <<: *pr}
@@ -198,9 +197,9 @@ proxy-groups:
   - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^(?!.*(台|日|韩|新|深|美)).*$"}
   - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(台|ZJ|TW|(?i)Taiwan))^(?!.*(港|韩|新|美)).*$"}
   - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(日|ZJ|JP|(?i)Japan))^(?!.*(港|台|韩|新|美)).*$"}
-  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(美|US|ZJ|CF|(?i)States|America))^(?!.*(港|台|日|韩|新)).*$"}
-  - {name: ♻️ 优质自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(20倍|ZJ|大王|DaWang|猫耳)).*$"}
-  - {name: ♻️ 自建自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(自建|ZJ)).*$"}
+  - {name: ♻️ 美国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(US).*$"}
+  - {name: ♻️ 泰国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(泰国).*$"}
+  - {name: ♻️ 韩国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "(?=.*(KR)).*$"}
   - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: "^(?!.*(直连)).*$"}
 
 # ========================
@@ -209,10 +208,8 @@ proxy-groups:
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - DOMAIN-SUFFIX,pttweb.cc,♻️ 台湾自动
-  - DOMAIN-SUFFIX,gemini.google.com,🚀 AI屏蔽
   - DOMAIN-KEYWORD,adobe,REJECT
-  - DOMAIN-SUFFIX,ankiweb.net,♻️ 香港自动
-  - DOMAIN-SUFFIX,idsduf.com,🚀 AI屏蔽
+  - DOMAIN-SUFFIX,ankiweb.net,♻️ 韩国自建
   - RULE-SET,pingbi / Domain,REJECT
   - RULE-SET,zhilian / Domain,DIRECT
   - RULE-SET,anti-AD / Domain,REJECT
