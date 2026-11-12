@@ -135,17 +135,17 @@ profile:
 # ========================
 # 策略组定义
 # ========================
-pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, 直连, 拒绝]}
+pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自建, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, ♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, 直连, 拒绝]}
 
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 日本自动, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, 直连, 拒绝]}
+  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 全部自建, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, ♻️ 香港自动, ♻️ 台湾自动, 直连, 拒绝]}
 
-  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)(香港|HongKong|Hong\s*Kong|\bHK\b|\bHKG\b|🇭🇰)'}
-  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)(台湾|台灣|臺湾|Taiwan|Taipei|台北|\bTW\b|\bTPE\b|🇹🇼)'}
-  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)(日本|Japan|Tokyo|Osaka|東京|大阪|\bJP\b|\bNRT\b|\bHND\b|🇯🇵)'}
+  - {name: ♻️ 全部自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '^(?=.*ZJ).*$'}
   - {name: ♻️ 美国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '^(?=.*ZJ)(?=.*US).*$'}
   - {name: ♻️ 泰国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '^(?=.*ZJ)(?=.*泰国).*$'}
   - {name: ♻️ 韩国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '^(?=.*ZJ)(?=.*KR).*$'}
+  - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)(香港|HongKong|Hong\s*Kong|\bHK\b|\bHKG\b|🇭🇰)'}
+  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)(台湾|台灣|臺湾|Taiwan|Taipei|台北|\bTW\b|\bTPE\b|🇹🇼)'}
   - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '(?i)^(?!.*(直连|Direct|请|订阅|更新|失效|官网|通知|倍率节点)).*$'}
   
   - {name: YouTube, <<: *pr}
