@@ -138,7 +138,7 @@ profile:
 pr: &pr {type: select, proxies: [🚀 默认代理, ♻️ 全部自建, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, ♻️ 全部自动, ♻️ 香港自动, ♻️ 台湾自动, 直连, 拒绝]}
 
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自动, ♻️ 全部自建, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 韩国自建, ♻️ 香港自动, ♻️ 台湾自动, 直连, 拒绝]}
+  - {name: 🚀 默认代理, type: select, proxies: [♻️ 全部自建, ♻️ 韩国自建, ♻️ 美国自建, ♻️ 泰国自建, ♻️ 香港自动, ♻️ 台湾自动, ♻️ 全部自动, 直连, 拒绝]}
 
   - {name: ♻️ 全部自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '^(?=.*ZJ).*$'}
   - {name: ♻️ 美国自建, type: url-test, include-all: true, tolerance: 50, interval: 300, filter: '^(?=.*ZJ)(?=.*US).*$'}
